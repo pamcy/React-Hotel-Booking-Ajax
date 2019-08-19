@@ -1,0 +1,12 @@
+%wrapper-style {
+  display: block;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wrapper-l {
+  @extend %wrapper-style;
+
+  max-width: 1600px;
+}

@@ -1,0 +1,73 @@
+@mixin media($point) {
+  @if $point=='above-large' {
+    @media (min-width: 1401px) {
+      @content;
+    }
+  }
+
+  @if $point=='below-large' {
+    @media (max-width: 1400px) {
+      @content;
+    }
+  }
+
+  @if $point=='above-medium' {
+    @media (min-width: 1281px) {
+      @content;
+    }
+  }
+
+  @if $point=='below-medium' {
+    @media (max-width: 1280px) {
+      @content;
+    }
+  }
+
+  @if $point=='above-desktop' {
+    @media (min-width: 1025px) {
+      @content;
+    }
+  }
+
+  @if $point=='below-desktop' {
+    @media (max-width: 1024px) {
+      @content;
+    }
+  }
+
+  @if $point=='above-small' {
+    @media (min-width: 851px) {
+      @content;
+    }
+  }
+
+  @if $point=='below-small' {
+    @media (max-width: 850px) {
+      @content;
+    }
+  }
+
+  @if $point=='above-tablet' {
+    @media (min-width: 768px) {
+      @content;
+    }
+  }
+
+  @if $point=='below-tablet' {
+    @media (max-width: 767px) {
+      @content;
+    }
+  }
+
+  @if $point=='above-mobile' {
+    @media (min-width: 551px) {
+      @content;
+    }
+  }
+
+  @if $point=='below-mobile' {
+    @media (max-width: 550px) {
+      @content;
+    }
+  }
+}

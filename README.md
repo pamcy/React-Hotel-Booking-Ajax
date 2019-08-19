@@ -1,68 +1,33 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React Foucs Music Player [![Netlify Status](https://api.netlify.com/api/v1/badges/d4010957-09fe-435a-91aa-69e8caa0d325/deploy-status)](https://app.netlify.com/sites/react-focus-music-player/deploys)
 
-## Available Scripts
+This time I try to make a mini version of Spotify-like clone from scratch, with React and the native HTML5 `audio` element to play music without any library, best music to stay productive at work.
 
-In the project directory, you can run:
+## Demo
 
-### `npm start`
+**Live URL:** [https://react-focus-music-player.netlify.com/](https://react-focus-music-player.netlify.com/)
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+![Focus Music Player in React](https://res.cloudinary.com/pamcy/image/upload/v1565596943/coding/react-focus-music-player.png)
+_The music player template designed and shared by [Tzu-Luen Zoey Hsueh](https://xd.adobe.com/spec/3d70480e-1af2-4dcc-64d2-26f24c5b72f9-4b41/grid/)_<br>
+_All audio tracks are from numerous amazing artists in [YouTube Audio Library](https://www.youtube.com/audiolibrary/music/?nv=1) without paying a dime._
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## What I learned from this project
 
-### `npm test`
+- [x] HTML5 `<audio>` element
+- [x] `timeupdate` event and React lifecycle methods
+- [x] Setting the audio source dynamically
+- [x] Play, pause, previous, next, shuffle, repeat tracks
+- [x] Adjusting volume
+- [x] Calculating mouse position on progress bar with `buffered`, `currentTime` and `duration`
+- [x] Clicking the progress bar to move to a different time
+- [x] Display advertisement every 3 songs
+- [x] CSS grid layout
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation
 
-### `npm run build`
+1. Clone this repo
+2. Run `npm install`
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Development
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+1. `npm start`: Run the app in development mode.
+2. `npm run build`: Builds the app for production to the build folder.

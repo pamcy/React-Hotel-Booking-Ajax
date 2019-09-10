@@ -1,0 +1,15 @@
+// Base Styles
+@import "reset";
+@import "setting";
+@import "variables";
+@import "typography";
+@import "media-queries";
+@import "container";
+@import "helpers";
+@import "functions";
+
+// Container Styles
+@import "../containers/MainPage/index.scss";
+
+// Component Styles
+@import "../components/HeroHeader/index.scss";

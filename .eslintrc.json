@@ -28,7 +28,8 @@
         "singleQuote": true,
         "printWidth": 100
       }
-    ]
+    ],
+    "import/no-named-as-default": 0
   },
   "plugins": ["prettier"]
 }

@@ -8,8 +8,9 @@
 @import "helpers";
 @import "functions";
 
-// Container Styles
-@import "../containers/MainPage/index.scss";
+// Page Styles
+@import "../pages/MainPage/index.scss";
+@import "../pages/DetailsPage/index.scss";
 
 // Component Styles
 @import "../components/HeroHeader/index.scss";

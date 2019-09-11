@@ -1,0 +1,23 @@
+.container {
+  padding: 0;
+}
+
+.room-cards {
+  margin-bottom: rem(60);
+}
+
+.room-cards__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: rem(58) rem(22);
+  margin-top: -6.5%;
+
+  @include media('below-desktop') {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include media('below-tablet') {
+    grid-template-columns: 1fr;
+    row-gap: rem(25);
+  }
+}

@@ -16,12 +16,23 @@
   height: 100%;
 }
 
+.hero__info-logo {
+  @include media('below-desktop') {
+    width: 25%;
+    height: 25%;
+  }
+}
+
 .hero__info-content {
   display: grid;
   grid-template-columns: repeat(2, auto);
   column-gap: rem(35);
   align-items: center;
   margin-top: rem(50);
+
+  @include media('below-tablet') {
+    display: none;
+  }
 }
 
 .hero__info-right {
@@ -62,7 +73,7 @@
   display: block;
   width: 100%;
   height: auto;
-  padding-top: 38%;
+  padding-top: 50%;
   overflow: hidden;
 }
 

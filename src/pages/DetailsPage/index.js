@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import MosaicHeader from '../../components/MosaicHeader/index';
 import RoomInfo from '../../components/RoomInfo/index';
+import RoomAmenities from '../../components/RoomAmenities/index';
 import { apiGetSingleRoom } from '../../api';
 
 class DetailsPage extends Component {
@@ -36,7 +37,7 @@ class DetailsPage extends Component {
 
   render() {
     const { currentRoom } = this.state;
-    const { name, imageUrl } = currentRoom;
+    const { name, imageUrl, amenities } = currentRoom;
 
     return (
       <div className="container wrapper-l">
@@ -45,6 +46,7 @@ class DetailsPage extends Component {
           <div className="wrapper-m main__wrapper">
             <section className="main__left">
               <RoomInfo data={currentRoom} />
+              <RoomAmenities amenities={amenities} />
             </section>
             <section className="main__right" />
           </div>

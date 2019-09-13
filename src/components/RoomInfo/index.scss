@@ -1,0 +1,29 @@
+.room-info__title {
+  @extend %regular--36;
+}
+
+.room-info__intro-list {
+  margin-top: rem(30);
+  margin-bottom: rem(20);
+}
+
+.room-info__intro-item,
+.room-info__description,
+.room-info__check-title {
+  @extend %light--16;
+}
+
+.room-info__checks {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.room-info__check-title {
+  display: block;
+}
+
+.room-info__check-time {
+  @extend %light--22;
+
+  letter-spacing: 1px;
+}

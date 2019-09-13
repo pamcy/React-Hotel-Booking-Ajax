@@ -1,0 +1,10 @@
+.main {
+  margin-top: rem(50);
+}
+
+.main__wrapper {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  column-gap: rem(45);
+  border: 1px solid red;
+}

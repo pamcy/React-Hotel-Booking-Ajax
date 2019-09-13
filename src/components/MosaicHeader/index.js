@@ -31,7 +31,7 @@ class MosaicHeader extends Component {
 
     return (
       <>
-        <div className="mosaic-header">
+        <header className="mosaic-header">
           {images.map((image, index) => (
             <div
               key={index}
@@ -41,7 +41,7 @@ class MosaicHeader extends Component {
               <img src={image} alt={name} className="mosaic-header__img" />
             </div>
           ))}
-        </div>
+        </header>
 
         {lightboxIsOpen && (
           <Lightbox

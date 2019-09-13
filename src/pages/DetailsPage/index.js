@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import MosaicHeader from '../../components/MosaicHeader/index';
+import RoomInfo from '../../components/RoomInfo/index';
 import { apiGetSingleRoom } from '../../api';
 
 class DetailsPage extends Component {
@@ -34,11 +35,20 @@ class DetailsPage extends Component {
   };
 
   render() {
-    const { name, imageUrl } = this.state.currentRoom;
+    const { currentRoom } = this.state;
+    const { name, imageUrl } = currentRoom;
 
     return (
       <div className="container wrapper-l">
         <MosaicHeader name={name} images={imageUrl} />
+        <main className="main">
+          <div className="wrapper-m main__wrapper">
+            <section className="main__left">
+              <RoomInfo data={currentRoom} />
+            </section>
+            <section className="main__right" />
+          </div>
+        </main>
       </div>
     );
   }

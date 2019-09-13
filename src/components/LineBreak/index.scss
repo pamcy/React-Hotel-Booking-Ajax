@@ -1,0 +1,14 @@
+.line-break {
+  &.room-info {
+    margin: rem(28) rem(0) rem(28) rem(5);
+  }
+}
+
+.line-break__line {
+  display: inline-block;
+  width: 1px;
+  height: 15px;
+  background-color: $black;
+  transform: rotate(-45deg);
+  margin-right: rem(12);
+}

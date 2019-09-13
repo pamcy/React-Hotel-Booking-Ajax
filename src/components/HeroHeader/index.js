@@ -7,7 +7,7 @@ const slideImages = [
 ];
 
 const HeroHeader = () => (
-  <div className="main__hero">
+  <header className="main__hero">
     <div className="hero__info">
       <div className="hero__info-wrapper">
         <img src="/images/hero-logo_white.svg" alt="White space" className="hero__info-logo" />
@@ -58,7 +58,7 @@ const HeroHeader = () => (
         <div key={i} className="hero__slide" style={{ backgroundImage: `url(${img})` }} />
       ))}
     </div>
-  </div>
+  </header>
 );
 
 export default HeroHeader;

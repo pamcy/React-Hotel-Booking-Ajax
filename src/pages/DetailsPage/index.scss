@@ -4,7 +4,7 @@
 
 .main__wrapper {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 2fr 380px;
   column-gap: rem(45);
   border: 1px solid red;
 }

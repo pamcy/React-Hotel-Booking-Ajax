@@ -4,8 +4,8 @@
 
 .room-amenities__list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  padding: rem(30);
+  grid-template-columns: repeat(2, 1fr);
+  padding: rem(30) rem(40);
   background-color: $gray-light;
 }
 
@@ -13,7 +13,7 @@
   display: flex;
   align-items: center;
 
-  &:not(:nth-of-type(n+7)) {
+  &:not(:nth-of-type(n+9)) {
     margin-bottom: rem(25);
   }
 

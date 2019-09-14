@@ -1,0 +1,27 @@
+.booking-card__prices {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: rem(5);
+}
+
+.booking-card__price-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: rem(18) rem(10);
+
+  &:nth-of-type(2) {
+    border-left: 1px solid $gray-light;
+  }
+}
+
+.booking-card__price-title {
+  @extend %light--12;
+
+  margin-bottom: rem(8);
+  color: $gray;
+}
+
+.booking-card__price-per-night {
+  @extend %light--24;
+}

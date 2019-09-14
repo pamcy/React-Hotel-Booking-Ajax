@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import MosaicHeader from '../../components/MosaicHeader/index';
 import RoomInfo from '../../components/RoomInfo/index';
 import RoomAmenities from '../../components/RoomAmenities/index';
+import BookingCard from '../../components/BookingCard/index';
 import { apiGetSingleRoom } from '../../api';
 
 class DetailsPage extends Component {
@@ -37,7 +38,7 @@ class DetailsPage extends Component {
 
   render() {
     const { currentRoom } = this.state;
-    const { name, imageUrl, amenities } = currentRoom;
+    const { name, imageUrl, amenities, normalDayPrice, holidayPrice } = currentRoom;
 
     return (
       <div className="container wrapper-l">
@@ -48,7 +49,9 @@ class DetailsPage extends Component {
               <RoomInfo data={currentRoom} />
               <RoomAmenities amenities={amenities} />
             </section>
-            <section className="main__right" />
+            <section className="main__right">
+              <BookingCard normalDayPrice={normalDayPrice} holidayPrice={holidayPrice} />
+            </section>
           </div>
         </main>
       </div>

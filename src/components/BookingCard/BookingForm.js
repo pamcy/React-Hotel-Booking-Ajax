@@ -18,13 +18,7 @@ export class BookingForm extends Component {
       startDate: '',
       endDate: '',
     },
-    errorMessages: {
-      // guestname: '',
-      // tel: '',
-      // dates: '',
-      // startDate: '',
-      // endDate: '',
-    },
+    errorMessages: {},
   };
 
   setNameAndTel = e => {
@@ -160,7 +154,7 @@ export class BookingForm extends Component {
                 startDate={startDate}
                 endDate={endDate}
                 onChange={this.setStartDate}
-                minDate={new Date()}
+                minDate={addDays(new Date(), 1)}
                 maxDate={addDays(new Date(), 90)}
                 dateFormat="yyyy-MM-dd"
                 placeholderText="Check in"

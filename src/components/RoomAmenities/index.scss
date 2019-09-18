@@ -5,8 +5,8 @@
 .room-amenities__list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  padding: rem(30) rem(40);
-  background-color: $gray-light;
+  padding-top: rem(30);
+  border-top: 1px solid $gray-light;
 }
 
 .room-amenities__item {

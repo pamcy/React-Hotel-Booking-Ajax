@@ -37,6 +37,8 @@ class DetailsPage extends Component {
   };
 
   render() {
+    const { location } = this.props;
+    const { roomID } = location.state;
     const { currentRoom } = this.state;
     const { name, imageUrl, amenities, normalDayPrice, holidayPrice } = currentRoom;
 
@@ -50,7 +52,11 @@ class DetailsPage extends Component {
               <RoomAmenities amenities={amenities} />
             </section>
             <section className="main__right">
-              <BookingCard normalDayPrice={normalDayPrice} holidayPrice={holidayPrice} />
+              <BookingCard
+                normalDayPrice={normalDayPrice}
+                holidayPrice={holidayPrice}
+                roomID={roomID}
+              />
             </section>
           </div>
         </main>

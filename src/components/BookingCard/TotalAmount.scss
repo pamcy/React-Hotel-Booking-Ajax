@@ -1,0 +1,35 @@
+.booking-card__total {
+  margin-bottom: rem(20);
+  background-color: $gray-lighter;
+}
+
+.booking-card__total-list {
+  padding: rem(10);
+}
+
+.booking-card__total-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: rem(8) 0;
+
+  &:not(:last-of-type) {
+    border-bottom: 1px solid $gray-light;
+  }
+}
+
+.booking-card__total-text {
+  @extend %light--14;
+
+  &:first-of-type {
+    margin-right: rem(8);
+  }
+
+  &.bold {
+    font-weight: $weight-500;
+  }
+
+  &.large {
+    font-size: rem(20);
+  }
+}

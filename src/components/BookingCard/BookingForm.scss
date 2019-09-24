@@ -60,4 +60,8 @@
     background-color: $white;
     border-bottom-color: $gray-light;
   }
+
+  .react-datepicker__day--excluded {
+    text-decoration: line-through;
+  }
 }

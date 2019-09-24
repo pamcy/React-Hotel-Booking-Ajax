@@ -18,6 +18,7 @@ class DetailsPage extends Component {
 
   state = {
     currentRoom: [],
+    bookingData: [],
   };
 
   componentDidMount() {
@@ -30,7 +31,10 @@ class DetailsPage extends Component {
     try {
       const response = await apiGetSingleRoom(location.state.roomID);
 
-      this.setState({ currentRoom: response.data.room[0] });
+      this.setState({
+        currentRoom: response.data.room[0],
+        bookingData: response.data.booking,
+      });
     } catch (e) {
       console.error(`🚫 Something went wrong fetching API calls on this room: ${e}`);
     }
@@ -39,7 +43,7 @@ class DetailsPage extends Component {
   render() {
     const { location } = this.props;
     const { roomID } = location.state;
-    const { currentRoom } = this.state;
+    const { currentRoom, bookingData } = this.state;
     const { name, imageUrl, amenities, normalDayPrice, holidayPrice } = currentRoom;
 
     return (
@@ -56,6 +60,7 @@ class DetailsPage extends Component {
                 normalDayPrice={normalDayPrice}
                 holidayPrice={holidayPrice}
                 roomID={roomID}
+                bookingData={bookingData}
               />
             </section>
           </div>

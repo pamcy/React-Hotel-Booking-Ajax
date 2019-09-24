@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import DatePicker from 'react-datepicker';
 import PropTypes from 'prop-types';
-import { addDays, eachDayOfInterval, format } from 'date-fns';
+import { addDays, eachDayOfInterval, format, parseISO } from 'date-fns';
 
 import TotalAmount from './TotalAmount';
 import { apiPostBookingData } from '../../api';
@@ -12,12 +12,7 @@ export class BookingForm extends Component {
   static propTypes = {};
 
   state = {
-    formData: {
-      guestname: '',
-      tel: '',
-      startDate: '',
-      endDate: '',
-    },
+    formData: {},
     errorMessages: {},
   };
 
@@ -35,6 +30,7 @@ export class BookingForm extends Component {
       ...this.state.formData,
       startDate,
     };
+
     this.setState({ formData });
   };
 
@@ -43,7 +39,14 @@ export class BookingForm extends Component {
       ...this.state.formData,
       endDate,
     };
+
     this.setState({ formData });
+  };
+
+  excludeDates = () => {
+    const { bookingData } = this.props;
+
+    return bookingData.map(data => parseISO(data.date));
   };
 
   validateForm = () => {
@@ -119,7 +122,7 @@ export class BookingForm extends Component {
 
   render() {
     const { formData, errorMessages } = this.state;
-    const { startDate, endDate } = formData;
+    const { name, tel, startDate, endDate } = formData;
 
     return (
       <div className="booking-card__form">
@@ -132,6 +135,7 @@ export class BookingForm extends Component {
               type="text"
               className="form__input"
               name="guestname"
+              value={name}
               onChange={this.setNameAndTel}
             />
             <em className="form__error-text">{errorMessages.guestname}</em>
@@ -140,7 +144,13 @@ export class BookingForm extends Component {
             <label htmlFor="guestname" className="form__label">
               Tel
             </label>
-            <input type="text" className="form__input" name="tel" onChange={this.setNameAndTel} />
+            <input
+              type="text"
+              className="form__input"
+              name="tel"
+              value={tel}
+              onChange={this.setNameAndTel}
+            />
             <em className="form__error-text">{errorMessages.tel}</em>
           </div>
           <div className="form__field">
@@ -156,6 +166,7 @@ export class BookingForm extends Component {
                 onChange={this.setStartDate}
                 minDate={addDays(new Date(), 1)}
                 maxDate={addDays(new Date(), 90)}
+                excludeDates={this.excludeDates()}
                 dateFormat="yyyy-MM-dd"
                 placeholderText="Check in"
               />
@@ -168,6 +179,7 @@ export class BookingForm extends Component {
                 onChange={this.setEndDate}
                 minDate={addDays(startDate, 1)}
                 maxDate={addDays(new Date(), 90)}
+                excludeDates={this.excludeDates()}
                 dateFormat="yyyy-MM-dd"
                 placeholderText="Check out"
               />

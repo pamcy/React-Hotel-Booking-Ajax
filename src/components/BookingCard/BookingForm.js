@@ -26,9 +26,16 @@ export class BookingForm extends Component {
   };
 
   setStartDate = (startDate = this.state.formData.startDate) => {
+    let endDate = '';
+
+    if (startDate > this.state.formData.endDate) {
+      endDate = addDays(startDate, 1);
+    }
+
     const formData = {
       ...this.state.formData,
       startDate,
+      endDate,
     };
 
     this.setState({ formData });
@@ -123,6 +130,7 @@ export class BookingForm extends Component {
   render() {
     const { formData, errorMessages } = this.state;
     const { name, tel, startDate, endDate } = formData;
+    const { normalDayPrice, holidayPrice } = this.props;
 
     return (
       <div className="booking-card__form">
@@ -186,7 +194,12 @@ export class BookingForm extends Component {
             </div>
             <em className="form__error-text">{errorMessages.dates}</em>
           </div>
-          <TotalAmount />
+          <TotalAmount
+            normalDayPrice={normalDayPrice}
+            holidayPrice={holidayPrice}
+            startDate={startDate}
+            endDate={endDate}
+          />
           <div className="form__btn-wrapper">
             <button type="submit" className="form__submit-btn">
               Reserve

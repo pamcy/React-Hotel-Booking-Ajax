@@ -10,7 +10,12 @@ const BookingCard = props => {
     <div className="booking-card">
       <div className="booking-card__wrapper">
         <RoomPrice normalDayPrice={normalDayPrice} holidayPrice={holidayPrice} />
-        <BookingForm roomID={roomID} bookingData={bookingData} />
+        <BookingForm
+          normalDayPrice={normalDayPrice}
+          holidayPrice={holidayPrice}
+          roomID={roomID}
+          bookingData={bookingData}
+        />
       </div>
     </div>
   );

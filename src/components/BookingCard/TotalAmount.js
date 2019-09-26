@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { eachDayOfInterval } from 'date-fns';
+import { subDays, eachDayOfInterval } from 'date-fns';
 
 const TotalAmount = props => {
   const { normalDayPrice, holidayPrice, startDate, endDate } = props;
@@ -13,7 +13,7 @@ const TotalAmount = props => {
 
   const totalPrice = eachDayOfInterval({
     start: startDate,
-    end: endDate,
+    end: subDays(endDate, 1),
   })
     .map(day => day.getDay(day))
     .map(day => {
@@ -29,8 +29,8 @@ const TotalAmount = props => {
 
       return pricePerDay;
     })
-    .reduce((sum, current) => {
-      return sum + current;
+    .reduce((sum, currentPrice) => {
+      return sum + currentPrice;
     }, 0);
 
   return (

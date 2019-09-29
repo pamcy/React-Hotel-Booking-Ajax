@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { addDays, eachDayOfInterval, format, parseISO } from 'date-fns';
 
 import TotalAmount from './TotalAmount';
+import Modal from '../Modal/index';
 import { apiPostBookingData } from '../../api';
 
 import 'react-datepicker/dist/react-datepicker.css';
@@ -133,80 +134,83 @@ export class BookingForm extends Component {
     const { normalDayPrice, holidayPrice } = this.props;
 
     return (
-      <div className="booking-card__form">
-        <form action="" className="form" onSubmit={this.submitForm}>
-          <div className="form__field">
-            <label htmlFor="guestname" className="form__label">
-              Name
-            </label>
-            <input
-              type="text"
-              className="form__input"
-              name="guestname"
-              value={name}
-              onChange={this.setNameAndTel}
-            />
-            <em className="form__error-text">{errorMessages.guestname}</em>
-          </div>
-          <div className="form__field">
-            <label htmlFor="guestname" className="form__label">
-              Tel
-            </label>
-            <input
-              type="text"
-              className="form__input"
-              name="tel"
-              value={tel}
-              onChange={this.setNameAndTel}
-            />
-            <em className="form__error-text">{errorMessages.tel}</em>
-          </div>
-          <div className="form__field">
-            <label htmlFor="guestname" className="form__label">
-              Dates
-            </label>
-            <div className="form__dates-wrapper">
-              <DatePicker
-                selected={startDate}
-                selectsStart
-                startDate={startDate}
-                endDate={endDate}
-                onChange={this.setStartDate}
-                minDate={addDays(new Date(), 1)}
-                maxDate={addDays(new Date(), 90)}
-                excludeDates={this.excludeDates()}
-                dateFormat="yyyy-MM-dd"
-                placeholderText="Check in"
+      <>
+        <div className="booking-card__form">
+          <form action="" className="form" onSubmit={this.submitForm}>
+            <div className="form__field">
+              <label htmlFor="guestname" className="form__label">
+                Name
+              </label>
+              <input
+                type="text"
+                className="form__input"
+                name="guestname"
+                value={name}
+                onChange={this.setNameAndTel}
               />
-              &#8594;
-              <DatePicker
-                selected={endDate}
-                selectsEnd
-                startDate={startDate}
-                endDate={endDate}
-                onChange={this.setEndDate}
-                minDate={addDays(startDate, 1)}
-                maxDate={addDays(new Date(), 90)}
-                excludeDates={this.excludeDates()}
-                dateFormat="yyyy-MM-dd"
-                placeholderText="Check out"
-              />
+              <em className="form__error-text">{errorMessages.guestname}</em>
             </div>
-            <em className="form__error-text">{errorMessages.dates}</em>
-          </div>
-          <TotalAmount
-            normalDayPrice={normalDayPrice}
-            holidayPrice={holidayPrice}
-            startDate={startDate}
-            endDate={endDate}
-          />
-          <div className="form__btn-wrapper">
-            <button type="submit" className="form__submit-btn">
-              Reserve
-            </button>
-          </div>
-        </form>
-      </div>
+            <div className="form__field">
+              <label htmlFor="guestname" className="form__label">
+                Tel
+              </label>
+              <input
+                type="text"
+                className="form__input"
+                name="tel"
+                value={tel}
+                onChange={this.setNameAndTel}
+              />
+              <em className="form__error-text">{errorMessages.tel}</em>
+            </div>
+            <div className="form__field">
+              <label htmlFor="guestname" className="form__label">
+                Dates
+              </label>
+              <div className="form__dates-wrapper">
+                <DatePicker
+                  selected={startDate}
+                  selectsStart
+                  startDate={startDate}
+                  endDate={endDate}
+                  onChange={this.setStartDate}
+                  minDate={addDays(new Date(), 1)}
+                  maxDate={addDays(new Date(), 90)}
+                  excludeDates={this.excludeDates()}
+                  dateFormat="yyyy-MM-dd"
+                  placeholderText="Check in"
+                />
+                &#8594;
+                <DatePicker
+                  selected={endDate}
+                  selectsEnd
+                  startDate={startDate}
+                  endDate={endDate}
+                  onChange={this.setEndDate}
+                  minDate={addDays(startDate, 1)}
+                  maxDate={addDays(new Date(), 90)}
+                  excludeDates={this.excludeDates()}
+                  dateFormat="yyyy-MM-dd"
+                  placeholderText="Check out"
+                />
+              </div>
+              <em className="form__error-text">{errorMessages.dates}</em>
+            </div>
+            <TotalAmount
+              normalDayPrice={normalDayPrice}
+              holidayPrice={holidayPrice}
+              startDate={startDate}
+              endDate={endDate}
+            />
+            <div className="form__btn-wrapper">
+              <button type="submit" className="form__submit-btn">
+                Reserve
+              </button>
+            </div>
+          </form>
+        </div>
+        <Modal />
+      </>
     );
   }
 }

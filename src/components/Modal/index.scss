@@ -1,0 +1,32 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.modal__area {
+  display: table;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-width: 450px;
+  width: 100%;
+  height: auto;
+  margin: auto;
+  padding: 0 rem(20);
+}
+
+.modal__content {
+  position: relative;
+  background-color: $white;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+.modal__success-icon {
+  width: 60px;
+  height: 60px;
+}

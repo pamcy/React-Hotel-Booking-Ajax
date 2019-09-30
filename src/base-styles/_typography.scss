@@ -8,6 +8,11 @@
   font-weight: $weight-400;
 }
 
+%regular--24 {
+  font-size: 1.5rem;
+  font-weight: $weight-400;
+}
+
 %regular--14 {
   font-size: 0.875rem;
   font-weight: $weight-400;
@@ -18,6 +23,11 @@
   font-weight: $weight-400;
 }
 
+%light--30 {
+  font-size: 1.875rem;
+  font-weight: $weight-300;
+}
+
 %light--24 {
   font-size: 1.5rem;
   font-weight: $weight-300;
@@ -26,6 +36,12 @@
 %light--22 {
   font-size: 1.35rem;
   font-weight: $weight-300;
+}
+
+%light--18 {
+  font-size: 1.125rem;
+  font-weight: $weight-300;
+  line-height: 1.5;
 }
 
 %light--16 {

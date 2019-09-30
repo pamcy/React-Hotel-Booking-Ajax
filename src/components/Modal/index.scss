@@ -4,6 +4,7 @@
   left: 0;
   right: 0;
   bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .modal__area {
@@ -22,11 +23,38 @@
 
 .modal__content {
   position: relative;
+  padding: rem(10);
   background-color: $white;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
 }
 
+.modal__close-btn {
+  @extend %light--30;
+
+  display: block;
+  margin-left: auto;
+  margin-bottom: rem(10);
+}
+
+.modal__header-title {
+  @extend %regular--24;
+
+  text-align: center;
+}
+
+.modal__body {
+  padding: 0 rem(10) rem(10);
+  text-align: center;
+}
+
+.modal__text {
+  @extend %light--18;
+
+  color: $gray;
+}
+
 .modal__success-icon {
+  margin: rem(30) 0 rem(10);
   width: 60px;
   height: 60px;
 }

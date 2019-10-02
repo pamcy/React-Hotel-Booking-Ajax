@@ -115,7 +115,7 @@ export class BookingForm extends Component {
   };
 
   sendFormData = async () => {
-    const { roomID } = this.props;
+    const { roomID, refreshBookingData } = this.props;
     const data = this.createFormData();
     let modalMessage;
 
@@ -130,6 +130,7 @@ export class BookingForm extends Component {
       });
       this.openModal();
       this.clearFormInputs();
+      refreshBookingData();
     } catch (e) {
       if (!e.response) return;
 

@@ -4,7 +4,7 @@ import RoomPrice from './RoomPrice';
 import BookingForm from './BookingForm';
 
 const BookingCard = props => {
-  const { normalDayPrice, holidayPrice, roomID, bookingData } = props;
+  const { normalDayPrice, holidayPrice, roomID, bookingData, refreshBookingData } = props;
   return (
     <div className="booking-card">
       <div className="booking-card__wrapper">
@@ -14,6 +14,7 @@ const BookingCard = props => {
           holidayPrice={holidayPrice}
           roomID={roomID}
           bookingData={bookingData}
+          refreshBookingData={refreshBookingData}
         />
       </div>
     </div>

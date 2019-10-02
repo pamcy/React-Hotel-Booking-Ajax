@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 const RoomPrice = ({ normalDayPrice, holidayPrice }) => {
   return (
@@ -14,11 +13,6 @@ const RoomPrice = ({ normalDayPrice, holidayPrice }) => {
       </div>
     </div>
   );
-};
-
-RoomPrice.propTypes = {
-  normalDayPrice: PropTypes.number,
-  holidayPrice: PropTypes.number,
 };
 
 export default RoomPrice;

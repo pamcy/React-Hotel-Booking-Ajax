@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import { subDays, eachDayOfInterval } from 'date-fns';
 
@@ -55,13 +54,6 @@ const TotalAmount = props => {
       </ul>
     </div>
   );
-};
-
-TotalAmount.propTypes = {
-  normalDayPrice: PropTypes.number,
-  holidayPrice: PropTypes.number,
-  startDate: PropTypes.string,
-  endDate: PropTypes.string,
 };
 
 export default TotalAmount;

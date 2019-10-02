@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import RoomPrice from './RoomPrice';
 import BookingForm from './BookingForm';
@@ -19,11 +18,6 @@ const BookingCard = props => {
       </div>
     </div>
   );
-};
-
-BookingCard.propTypes = {
-  normalDayPrice: PropTypes.number,
-  holidayPrice: PropTypes.number,
 };
 
 export default BookingCard;

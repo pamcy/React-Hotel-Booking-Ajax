@@ -1,14 +1,8 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
 
 class MosaicHeader extends Component {
-  static propTypes = {
-    name: PropTypes.string,
-    images: PropTypes.arrayOf(PropTypes.string),
-  };
-
   state = {
     imageIndex: 0,
     lightboxIsOpen: false,

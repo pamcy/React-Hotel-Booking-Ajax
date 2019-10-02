@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 const LineBreak = ({ location }) => {
   return (
@@ -9,10 +8,6 @@ const LineBreak = ({ location }) => {
       <span className="line-break__line" />
     </div>
   );
-};
-
-LineBreak.propTypes = {
-  location: PropTypes.string.isRequired,
 };
 
 export default LineBreak;

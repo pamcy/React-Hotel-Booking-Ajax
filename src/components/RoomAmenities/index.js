@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 const RoomAmenities = props => {
   const { amenities } = props;
@@ -75,20 +74,6 @@ const RoomAmenities = props => {
       </ul>
     </div>
   );
-};
-
-RoomAmenities.propTypes = {
-  amenities: PropTypes.shape({
-    'Wi-Fi': PropTypes.bool,
-    Breakfast: PropTypes.bool,
-    'Mini-Bar': PropTypes.bool,
-    'Room-Service': PropTypes.bool,
-    'Air-Conditioner': PropTypes.bool,
-    'Great-View': PropTypes.bool,
-    'Smoke-Free': PropTypes.bool,
-    'Child-Friendly': PropTypes.bool,
-    'Pet-Friendly': PropTypes.bool,
-  }).isRequired,
 };
 
 export default RoomAmenities;

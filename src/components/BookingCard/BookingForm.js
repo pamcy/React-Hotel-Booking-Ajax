@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import DatePicker from 'react-datepicker';
-import PropTypes from 'prop-types';
 import { addDays, eachDayOfInterval, format, parseISO } from 'date-fns';
 
 import TotalAmount from './TotalAmount';
@@ -12,18 +11,30 @@ import 'react-datepicker/dist/react-datepicker.css';
 export class BookingForm extends Component {
   static propTypes = {};
 
+  formRef = React.createRef();
+
+  modalRef = React.createRef();
+
   state = {
-    formData: {},
+    formData: {
+      guestname: '',
+      tel: '',
+      startDate: null,
+      endDate: null,
+    },
     errorMessages: {},
+    modalIsOpen: false,
+    modalMessage: '',
+    bookingSuccess: false,
   };
 
   setNameAndTel = e => {
-    const formData = {
-      ...this.state.formData,
-      [e.currentTarget.name]: e.currentTarget.value,
-    };
-
-    this.setState({ formData });
+    this.setState({
+      formData: {
+        ...this.state.formData,
+        [e.target.name]: e.target.value,
+      },
+    });
   };
 
   setStartDate = (startDate = this.state.formData.startDate) => {
@@ -106,14 +117,43 @@ export class BookingForm extends Component {
   sendFormData = async () => {
     const { roomID } = this.props;
     const data = this.createFormData();
+    let modalMessage;
 
     try {
-      const content = await apiPostBookingData(roomID, data);
-      console.log(content);
+      await apiPostBookingData(roomID, data);
+
+      modalMessage = 'Thank you for booking with White Space, your room was booked successfully!';
+
+      this.setState({
+        modalMessage,
+        bookingSuccess: true,
+      });
+      this.openModal();
+      this.clearFormInputs();
     } catch (e) {
-      console.error(`🚫 Something went wrong posting data: ${e.response}`);
-      console.error(e.response.data.message);
+      if (!e.response) return;
+
+      modalMessage = e.response.data.message;
+
+      this.setState({
+        modalMessage,
+        bookingSuccess: false,
+      });
+      this.openModal();
+
+      console.error(`🚫 Something went wrong posting data: ${e.response.data.message}`);
     }
+  };
+
+  clearFormInputs = () => {
+    this.setState({
+      formData: {
+        guestname: '',
+        tel: '',
+        startDate: null,
+        endDate: null,
+      },
+    });
   };
 
   submitForm = e => {
@@ -122,21 +162,41 @@ export class BookingForm extends Component {
     const allValidated = this.validateForm();
 
     if (allValidated) {
-      console.log('all passed');
       this.sendFormData();
-      console.log('all sent');
     }
   };
 
+  updateStyleToBody = () => {
+    document.body.classList.toggle('modal-is-open');
+  };
+
+  openModal = () => {
+    this.setState({ modalIsOpen: true }, this.updateStyleToBody);
+  };
+
+  closeModal = () => {
+    this.setState({ modalIsOpen: false }, this.updateStyleToBody);
+  };
+
+  handleClickOutside = e => {
+    const modal = this.modalRef.current;
+
+    if (modal && modal.contains(e.target)) {
+      return;
+    }
+
+    this.closeModal();
+  };
+
   render() {
-    const { formData, errorMessages } = this.state;
-    const { name, tel, startDate, endDate } = formData;
+    const { formData, errorMessages, modalIsOpen, modalMessage, bookingSuccess } = this.state;
+    const { guestname, tel, startDate, endDate } = formData;
     const { normalDayPrice, holidayPrice } = this.props;
 
     return (
       <>
         <div className="booking-card__form">
-          <form action="" className="form" onSubmit={this.submitForm}>
+          <form className="form" ref={this.formRef} onSubmit={this.submitForm}>
             <div className="form__field">
               <label htmlFor="guestname" className="form__label">
                 Name
@@ -145,7 +205,7 @@ export class BookingForm extends Component {
                 type="text"
                 className="form__input"
                 name="guestname"
-                value={name}
+                value={guestname}
                 onChange={this.setNameAndTel}
               />
               <em className="form__error-text">{errorMessages.guestname}</em>
@@ -209,7 +269,16 @@ export class BookingForm extends Component {
             </div>
           </form>
         </div>
-        <Modal />
+        {modalIsOpen && (
+          <Modal
+            modalRef={this.modalRef}
+            modalIsOpen={modalIsOpen}
+            modalMessage={modalMessage}
+            closeModal={this.closeModal}
+            handleClickOutside={this.handleClickOutside}
+            bookingSuccess={bookingSuccess}
+          />
+        )}
       </>
     );
   }

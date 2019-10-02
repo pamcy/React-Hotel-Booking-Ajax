@@ -16,6 +16,17 @@ html {
   overflow-x: hidden;
 }
 
+body {
+  &.modal-is-open {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+  }
+}
+
 img {
   display: inline-block;
   max-width: 100%;

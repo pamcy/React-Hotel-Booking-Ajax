@@ -5,6 +5,12 @@
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transition: opacity 0.15s;
+
+  .modal-is-open & {
+    opacity: 1;
+  }
 }
 
 .modal__area {
@@ -19,6 +25,12 @@
   height: auto;
   margin: auto;
   padding: 0 rem(20);
+  transform: translateY(-100%);
+  transition: transform ease-out 0.3s;
+
+  .modal-is-open & {
+    transform: translateY(0);
+  }
 }
 
 .modal__content {

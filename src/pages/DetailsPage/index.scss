@@ -1,9 +1,18 @@
 .main {
   margin: rem(50) 0 rem(80);
+
+  @include media('below-desktop') {
+    margin-bottom: rem(50);
+  }
 }
 
 .main__wrapper {
   display: grid;
   grid-template-columns: 2fr 380px;
   column-gap: rem(45);
+
+  @include media('below-desktop') {
+    grid-template-columns: 1fr;
+    row-gap: rem(40);
+  }
 }

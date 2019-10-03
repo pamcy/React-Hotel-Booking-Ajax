@@ -253,6 +253,13 @@ export class BookingForm extends Component {
                   excludeDates={this.excludeDates()}
                   dateFormat="yyyy-MM-dd"
                   placeholderText="Check out"
+                  popperModifiers={{
+                    preventOverflow: {
+                      enabled: true,
+                      escapeWithReference: false,
+                      boundariesElement: 'viewport',
+                    },
+                  }}
                 />
               </div>
               <em className="form__error-text">{errorMessages.dates}</em>

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import { Ellipsis } from 'react-spinners-css';
+
 import HeroHeader from '../../components/HeroHeader/index';
 import RoomCard from '../../components/RoomCard/index';
 import { apiGetAllRooms } from '../../api';
@@ -7,6 +9,7 @@ import { apiGetAllRooms } from '../../api';
 class MainPage extends Component {
   state = {
     rooms: [],
+    pageIsLoading: true,
   };
 
   componentDidMount() {
@@ -20,22 +23,32 @@ class MainPage extends Component {
     } catch (e) {
       console.error(`🚫 Something went wrong fetching API calls: ${e}`);
     }
+
+    this.setState({ pageIsLoading: false });
   };
 
   render() {
-    const { rooms } = this.state;
+    const { rooms, pageIsLoading } = this.state;
 
     return (
-      <div className="container wrapper-l">
-        <HeroHeader />
-        <div className="room-cards">
-          <div className="room-cards__list wrapper-m">
-            {rooms.map(room => (
-              <RoomCard key={room.id} data={room} />
-            ))}
+      <>
+        {pageIsLoading && (
+          <div className="pre-loading">
+            <img src="/images/hero-logo_white.svg" alt="White Space" className="hero__info-logo" />
+            <Ellipsis color="#fff" />
+          </div>
+        )}
+        <div className={`container wrapper-l ${pageIsLoading ? 'is-loading' : ''}`}>
+          <HeroHeader />
+          <div className="room-cards">
+            <div className="room-cards__list wrapper-m">
+              {rooms.map(room => (
+                <RoomCard key={room.id} data={room} />
+              ))}
+            </div>
           </div>
         </div>
-      </div>
+      </>
     );
   }
 }

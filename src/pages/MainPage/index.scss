@@ -1,5 +1,18 @@
+.pre-loading {
+  @extend %flex-center;
+
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: $black;
+}
+
 .container {
+  display: block;
   padding: 0;
+
+  &.is-loading {
+    display: none;
+  }
 }
 
 .room-cards {

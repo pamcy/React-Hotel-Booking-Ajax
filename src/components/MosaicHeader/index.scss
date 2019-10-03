@@ -1,8 +1,31 @@
 .mosaic-header {
+  position: relative;
+  height: 30vw;
+
+  @include media('below-tablet') {
+    height: 50vw;
+  }
+}
+
+.mosaic-header__logo {
+  position: absolute;
+  top: 7%;
+  left: 4%;
+  z-index: 1;
+
+  @include media('below-tablet') {
+    width: 100px;
+  }
+}
+
+.mosaic-header__items {
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: repeat(2, 15vw);
-  height: 30vw;
+
+  @include media('below-tablet') {
+    grid-template-rows: repeat(2, 25vw);
+  }
 }
 
 .mosaic-header__item {

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
 
@@ -26,15 +27,26 @@ class MosaicHeader extends Component {
     return (
       <>
         <header className="mosaic-header">
-          {images.map((image, index) => (
-            <div
-              key={index}
-              className={`mosaic-header__item mosaic-header__item--${index + 1}`}
-              onClick={() => this.toggleLightbox(index)}
-            >
-              <img src={image} alt={name} className="mosaic-header__img" />
-            </div>
-          ))}
+          <div className="mosaic-header__logo">
+            <Link to="/" className="mosaic-header__logo-link">
+              <img
+                src="/images/hero-logo_block.svg"
+                alt="WhiteSpace Logo"
+                className="mosaic-header__logo-img"
+              />
+            </Link>
+          </div>
+          <div className="mosaic-header__items">
+            {images.map((image, index) => (
+              <div
+                key={index}
+                className={`mosaic-header__item mosaic-header__item--${index + 1}`}
+                onClick={() => this.toggleLightbox(index)}
+              >
+                <img src={image} alt={name} className="mosaic-header__img" />
+              </div>
+            ))}
+          </div>
         </header>
 
         {lightboxIsOpen && (

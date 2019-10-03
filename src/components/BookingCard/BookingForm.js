@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
+
 import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 import { addDays, eachDayOfInterval, format, parseISO } from 'date-fns';
+import { Facebook } from 'react-spinners-css';
 
 import TotalAmount from './TotalAmount';
 import Modal from '../Modal/index';
 import { apiPostBookingData } from '../../api';
 
-import 'react-datepicker/dist/react-datepicker.css';
-
 export class BookingForm extends Component {
-  static propTypes = {};
-
   formRef = React.createRef();
 
   modalRef = React.createRef();
@@ -26,6 +25,7 @@ export class BookingForm extends Component {
     modalIsOpen: false,
     modalMessage: '',
     bookingSuccess: false,
+    reserveIsLoading: false,
   };
 
   setNameAndTel = e => {
@@ -120,6 +120,8 @@ export class BookingForm extends Component {
     let modalMessage;
 
     try {
+      this.setState({ reserveIsLoading: true });
+
       await apiPostBookingData(roomID, data);
 
       modalMessage = 'Thank you for booking with White Space, your room was booked successfully!';
@@ -127,6 +129,7 @@ export class BookingForm extends Component {
       this.setState({
         modalMessage,
         bookingSuccess: true,
+        reserveIsLoading: false,
       });
       this.openModal();
       this.clearFormInputs();
@@ -139,6 +142,7 @@ export class BookingForm extends Component {
       this.setState({
         modalMessage,
         bookingSuccess: false,
+        reserveIsLoading: false,
       });
       this.openModal();
 
@@ -190,7 +194,14 @@ export class BookingForm extends Component {
   };
 
   render() {
-    const { formData, errorMessages, modalIsOpen, modalMessage, bookingSuccess } = this.state;
+    const {
+      formData,
+      errorMessages,
+      modalIsOpen,
+      modalMessage,
+      bookingSuccess,
+      reserveIsLoading,
+    } = this.state;
     const { guestname, tel, startDate, endDate } = formData;
     const { normalDayPrice, holidayPrice } = this.props;
 
@@ -272,7 +283,7 @@ export class BookingForm extends Component {
             />
             <div className="form__btn-wrapper">
               <button type="submit" className="form__submit-btn">
-                Reserve
+                {reserveIsLoading ? <Facebook color="#fff" /> : 'Reserve'}
               </button>
             </div>
           </form>

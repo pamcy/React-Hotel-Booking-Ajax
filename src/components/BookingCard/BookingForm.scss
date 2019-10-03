@@ -54,8 +54,9 @@
   }
 }
 
-// Datepicker
+// Overwrite plugins
 .booking-card {
+  // Datepicker
   .react-datepicker__header {
     background-color: $white;
     border-bottom-color: $gray-light;
@@ -64,4 +65,46 @@
   .react-datepicker__day--excluded {
     text-decoration: line-through;
   }
+
+  // React Spinner CSS
+  .lds-facebook {
+    width: 60px;
+    height: 30px;
+  }
+
+  .lds-facebook div {
+    width: 6px;
+    animation: new-lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+  }
+
+  .lds-facebook div:nth-child(1) {
+    left: 8px;
+    animation-delay: -0.24s;
+  }
+
+  .lds-facebook div:nth-child(2) {
+    left: 24px;
+    animation-delay: -0.12s;
+  }
+
+  .lds-facebook div:nth-child(3) {
+    left: 40px;
+    animation-delay: 0s;
+  }
+
+  @keyframes new-lds-facebook {
+    0% {
+      top: 0;
+      height: 35px;
+    }
+
+    50%,
+    100% {
+      top: 8px;
+      height: 15px;
+    }
+  }
 }
+
+
+

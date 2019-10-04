@@ -64,7 +64,7 @@
   @extend %skeleton-style;
 
   border: 1px solid $white;
-  animation: fading 1.5s infinite;
+  animation: fading 1s infinite;
 }
 
 @keyframes fading {

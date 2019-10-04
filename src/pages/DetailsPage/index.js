@@ -68,6 +68,7 @@ class DetailsPage extends Component {
             </section>
             <section className="main__right">
               <BookingCard
+                roomIsLoading={roomIsLoading}
                 normalDayPrice={normalDayPrice}
                 holidayPrice={holidayPrice}
                 roomID={roomID}

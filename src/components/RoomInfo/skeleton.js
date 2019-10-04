@@ -1,6 +1,6 @@
 import React from 'react';
 
-const skeleton = () => {
+const InfoSkeleton = () => {
   return (
     <div>
       <div className="skeleton skeleton--room-info">
@@ -18,4 +18,4 @@ const skeleton = () => {
   );
 };
 
-export default skeleton;
+export default InfoSkeleton;

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
 
@@ -7,6 +8,7 @@ class MosaicHeader extends Component {
   state = {
     imageIndex: 0,
     lightboxIsOpen: false,
+    imageIsLoaded: this.props.images.map(image => false),
   };
 
   toggleLightbox = imageIndex => {
@@ -16,9 +18,17 @@ class MosaicHeader extends Component {
     }));
   };
 
+  handleImageLoaded = index => {
+    const { imageIsLoaded } = this.state;
+    const newImageIsLoaded = [...imageIsLoaded];
+    newImageIsLoaded[index] = true;
+
+    this.setState({ imageIsLoaded: newImageIsLoaded });
+  };
+
   render() {
     const { name, images } = this.props;
-    const { imageIndex, lightboxIsOpen } = this.state;
+    const { imageIndex, lightboxIsOpen, imageIsLoaded } = this.state;
 
     if (name === undefined || images === undefined) {
       return null;
@@ -41,9 +51,15 @@ class MosaicHeader extends Component {
               <div
                 key={index}
                 className={`mosaic-header__item mosaic-header__item--${index + 1}`}
-                onClick={() => this.toggleLightbox(index)}
+                onClick={this.toggleLightbox}
               >
-                <img src={image} alt={name} className="mosaic-header__img" />
+                <img
+                  src={image}
+                  alt={name}
+                  className="mosaic-header__img"
+                  onLoad={() => this.handleImageLoaded(index)}
+                />
+                {!imageIsLoaded[index] && <div className="mosaic-header__placeholder" />}
               </div>
             ))}
           </div>

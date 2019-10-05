@@ -51,7 +51,7 @@ class MosaicHeader extends Component {
               <div
                 key={index}
                 className={`mosaic-header__item mosaic-header__item--${index + 1}`}
-                onClick={this.toggleLightbox}
+                onClick={() => this.toggleLightbox(index)}
               >
                 <img
                   src={image}

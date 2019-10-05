@@ -27,7 +27,6 @@ class MainPage extends Component {
 
   setSlidesAreLoaded = () => {
     this.setState({ slidesAreLoaded: true });
-    console.log('ALL IMAGES ARE LOADED');
   };
 
   render() {

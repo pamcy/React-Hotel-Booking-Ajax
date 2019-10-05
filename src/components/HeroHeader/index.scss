@@ -1,5 +1,7 @@
 .main__hero {
   position: relative;
+  padding-top: 50%;
+  overflow: hidden;
 }
 
 .hero__info {
@@ -69,65 +71,41 @@
 }
 
 .hero__slides {
-  position: relative;
-  display: block;
-  width: 100%;
-  height: auto;
-  padding-top: 50%;
-  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300%;
+  height: 100%;
+  transition: transform 1s;
+  animation: slider-animation 24s ease-in-out infinite;
 }
 
 .hero__slide {
   @extend %background-cover;
-  @extend %full-stretch;
 
-  opacity: 0;
-  animation: autoPlaySlides 18s linear infinite;
-
-  &::before {
-    @extend %full-stretch;
-
-    content: "";
-    background: rgba(0, 0, 0, 0.15);
-  }
-
-  &:nth-of-type(1) {
-    opacity: 1;
-  }
-
-  &:nth-of-type(2) {
-    animation-delay: 6s;
-  }
-
-  &:nth-of-type(3) {
-    animation-delay: 12s;
-  }
+  display: inline-block;
+  width: 33.333%;
+  height: 100%;
 }
 
-@keyframes autoPlaySlides {
-  0% {
-    opacity: 0;
-    transform: scale(1);
-  }
-
+@keyframes slider-animation {
+  0%,
   5% {
-    opacity: 1;
+    transform: translateX(0%);
   }
 
-  25% {
-    opacity: 1;
-  }
-
+  25%,
   30% {
-    transform: scale(1.1);
+    transform: translateX(-33%);
   }
 
-  70% {
-    opacity: 0;
+  50%,
+  60% {
+    transform: translateX(-66%);
   }
 
-  100% {
-    opacity: 0;
-    transform: scale(1);
+  75%,
+  80% {
+    transform: translateX(-33%);
   }
 }

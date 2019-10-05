@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import InfoSkeleton from '../../components/RoomInfo/Skeleton';
-import MosaicSkeleton from '../../components/MosaicHeader/Skeleton';
+import InfoSkeleton from '../../components/RoomInfo/skeleton';
+import MosaicSkeleton from '../../components/MosaicHeader/skeleton';
 
 import MosaicHeader from '../../components/MosaicHeader/index';
 import RoomInfo from '../../components/RoomInfo/index';

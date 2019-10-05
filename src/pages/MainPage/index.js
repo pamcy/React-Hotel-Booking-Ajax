@@ -9,6 +9,7 @@ import { apiGetAllRooms } from '../../api';
 class MainPage extends Component {
   state = {
     rooms: [],
+    dataIsFetched: false,
     slidesAreLoaded: false,
   };
 
@@ -23,6 +24,8 @@ class MainPage extends Component {
     } catch (e) {
       console.error(`🚫 Something went wrong fetching API calls: ${e}`);
     }
+
+    this.setState({ dataIsFetched: true });
   };
 
   setSlidesAreLoaded = () => {
@@ -30,17 +33,18 @@ class MainPage extends Component {
   };
 
   render() {
-    const { rooms, slidesAreLoaded } = this.state;
+    const { rooms, dataIsFetched, slidesAreLoaded } = this.state;
+    const allDownloaded = dataIsFetched && slidesAreLoaded;
 
     return (
       <>
-        {!slidesAreLoaded && (
+        {!allDownloaded && (
           <div className="pre-loading">
             <img src="/images/hero-logo_white.svg" alt="White Space" className="hero__info-logo" />
             <Ellipsis color="#fff" />
           </div>
         )}
-        <div className={`container wrapper-l ${!slidesAreLoaded ? 'is-loading' : ''}`}>
+        <div className={`container wrapper-l ${!allDownloaded ? 'is-loading' : ''}`}>
           <HeroHeader setSlidesAreLoaded={this.setSlidesAreLoaded} />
           <div className="room-cards">
             <div className="room-cards__list wrapper-m">

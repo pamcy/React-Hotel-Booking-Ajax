@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import React, { Component } from './node_modules/react';
+import { Link } from './node_modules/react-router-dom';
 
-import Lightbox from 'react-image-lightbox';
-import 'react-image-lightbox/style.css';
+import Lightbox from './node_modules/react-image-lightbox';
+import './node_modules/react-image-lightbox/style.css';
 
 class MosaicHeader extends Component {
   state = {

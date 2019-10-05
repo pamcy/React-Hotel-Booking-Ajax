@@ -9,7 +9,7 @@ import { apiGetAllRooms } from '../../api';
 class MainPage extends Component {
   state = {
     rooms: [],
-    pageIsLoading: true,
+    slidesAreLoaded: false,
   };
 
   componentDidMount() {
@@ -23,23 +23,26 @@ class MainPage extends Component {
     } catch (e) {
       console.error(`🚫 Something went wrong fetching API calls: ${e}`);
     }
+  };
 
-    this.setState({ pageIsLoading: false });
+  setSlidesAreLoaded = () => {
+    this.setState({ slidesAreLoaded: true });
+    console.log('ALL IMAGES ARE LOADED');
   };
 
   render() {
-    const { rooms, pageIsLoading } = this.state;
+    const { rooms, slidesAreLoaded } = this.state;
 
     return (
       <>
-        {pageIsLoading && (
+        {!slidesAreLoaded && (
           <div className="pre-loading">
             <img src="/images/hero-logo_white.svg" alt="White Space" className="hero__info-logo" />
             <Ellipsis color="#fff" />
           </div>
         )}
-        <div className={`container wrapper-l ${pageIsLoading ? 'is-loading' : ''}`}>
-          <HeroHeader />
+        <div className={`container wrapper-l ${!slidesAreLoaded ? 'is-loading' : ''}`}>
+          <HeroHeader setSlidesAreLoaded={this.setSlidesAreLoaded} />
           <div className="room-cards">
             <div className="room-cards__list wrapper-m">
               {rooms.map(room => (

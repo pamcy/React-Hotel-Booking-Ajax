@@ -4,7 +4,12 @@ import { Link } from 'react-router-dom';
 const RoomCard = ({ data }) => {
   return (
     <div className="room-card">
-      <div className="room-card__wrapper" style={{ backgroundImage: `url(${data.imageUrl})` }}>
+      <div
+        className="room-card__wrapper"
+        style={{
+          backgroundImage: `url(${data.imageUrl}), linear-gradient(to right, #e4e4e4, #f8f8f8)`,
+        }}
+      >
         <Link
           className="room-card__link"
           to={{

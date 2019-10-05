@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="164px" height="53px" viewBox="0 0 164 53" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57 (83077) - https://sketch.com -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 -1.13731941e-13 150 -1.13731941e-13 150 10.6730495 15.2818834 10.6730495 15.2818834 49 0 49"></polygon>
+        <pattern id="pattern-2" width="5.28507864" height="5.28507864" x="-5.28507864" y="-5.28507864" patternUnits="userSpaceOnUse">
+            <use xlink:href="#image-3" transform="scale(0.105701573,0.105701573)"></use>
+        </pattern>
+        <image id="image-3" width="50" height="50" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAZhJREFUaAXll1VuA0EQRNeHCJPDzHj/I4SZGZ0TJK+iWHLinvV3jVsqaTXzU0+v11AURfHVkCueR4jlNILo+ZpYwvwHqcOMumm5p3AEc8P5mBPMJGXLYKzMTABzR7IwUwZzC6TVmo2XmBGM7m1GZVU6WjOtnxWM1qgMRmtoM9nB6PskWjN9ZOuj22b0PZIVjH6DRWYeOJ+y0UJR/ZBsG5hpJzPDlNX/lmjNHjnPCmbGyUyVspckZSYbmCcgZ4nNVGl6QSIzdjBD7QLzDOgcsZlBmp6TaM2yg5m30UJRmTlLmHnh3ApmoAXMAvc2I5hTEr0zMrNoQ0LRfpKCec0NZsnNzAmFozWTGSuYPgqnYN64WyY2I5hjEpmxg+ltAbNio4WigjkikZl3zrOCWQXIZnpoekhSZrKB+QByzUYLRbvJAYnMZAez7mZmP2GmVqlUrGC6AEnCcLfhZEYweyR6Z2qcb2YDw5pZwXSWmPnkbsvJjGB2SbRmnjCsUxMMZ4Kxmg7a7pA/ML9wViAq2wTjClKH2ebhx4xAvgGD91PfHY5rAgAAAABJRU5ErkJggg=="></image>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="information" transform="translate(-49.000000, -32.000000)">
+            <g id="Group" transform="translate(49.000000, 32.000000)">
+                <g id="Rectangle-Copy-2">
+                    <use fill-opacity="0.28" fill="#FFFFFF" xlink:href="#path-1"></use>
+                    <use fill="url(#pattern-2)" xlink:href="#path-1"></use>
+                </g>
+                <rect id="Rectangle" stroke="#000000" x="14.5" y="10.5" width="149" height="42"></rect>
+                <text id="WhiteSpace" font-family="NotoSansCJKtc-Medium, Noto Sans CJK TC" font-size="18" font-weight="400" line-spacing="44" letter-spacing="1.8800001" fill="#000000">
+                    <tspan x="31" y="29">WhiteSpace</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

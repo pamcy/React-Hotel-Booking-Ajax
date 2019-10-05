@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/react-hotel-booking/static/css/main.da026b09.chunk.css",
+    "main.js": "/react-hotel-booking/static/js/main.3fe71c80.chunk.js",
+    "main.js.map": "/react-hotel-booking/static/js/main.3fe71c80.chunk.js.map",
+    "runtime~main.js": "/react-hotel-booking/static/js/runtime~main.7779c284.js",
+    "runtime~main.js.map": "/react-hotel-booking/static/js/runtime~main.7779c284.js.map",
+    "static/css/2.9f3ac81c.chunk.css": "/react-hotel-booking/static/css/2.9f3ac81c.chunk.css",
+    "static/js/2.b478bc34.chunk.js": "/react-hotel-booking/static/js/2.b478bc34.chunk.js",
+    "static/js/2.b478bc34.chunk.js.map": "/react-hotel-booking/static/js/2.b478bc34.chunk.js.map",
+    "index.html": "/react-hotel-booking/index.html",
+    "precache-manifest.37ccb1a88332c6dd05c606b06d81ac85.js": "/react-hotel-booking/precache-manifest.37ccb1a88332c6dd05c606b06d81ac85.js",
+    "service-worker.js": "/react-hotel-booking/service-worker.js",
+    "static/css/2.9f3ac81c.chunk.css.map": "/react-hotel-booking/static/css/2.9f3ac81c.chunk.css.map",
+    "static/css/main.da026b09.chunk.css.map": "/react-hotel-booking/static/css/main.da026b09.chunk.css.map"
+  }
+}

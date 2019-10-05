@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
 import InfoSkeleton from '../../components/RoomInfo/skeleton';
-import MosaicSkeleton from '../../components/mosaicheader/Skeleton';
+import MosaicSkeleton from '../../components/MosaicHeader/skeleton';
 
-import MosaicHeader from '../../components/mosaicheader/index';
+import MosaicHeader from '../../components/MosaicHeader/index';
 import RoomInfo from '../../components/RoomInfo/index';
 import RoomAmenities from '../../components/RoomAmenities/index';
 import BookingCard from '../../components/BookingCard/index';

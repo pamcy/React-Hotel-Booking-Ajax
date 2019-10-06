@@ -1,18 +1,18 @@
-# Hotel Booking Site with React [![Netlify Status](https://api.netlify.com/api/v1/badges/eacc361d-cbdb-44ca-96ce-3b37ddbd2159/deploy-status)](https://app.netlify.com/sites/react-hotel-booking/deploys)
+# Hotel Booking Site with React [![Netlify Status](https://api.netlify.com/api/v1/badges/6fe3f8a5-0ac7-4cf8-9529-594bf7dedb89/deploy-status)](https://app.netlify.com/sites/react-hotel-booking/deploys)
 
 The main purpose of this project is to implement API requests with React, so I create myself a mini hotel booking website like Airbnb.
 
 ## Demo
 
-**Live URL:** [https://react-focus-music-player.netlify.com/](https://react-focus-music-player.netlify.com/)
+**Live URL:** [https://react-hotel-booking.netlify.com/](https://react-hotel-booking.netlify.com/)
 
-![Hotel Booking Site with React](https://res.cloudinary.com/pamcy/image/upload/v1570259941/coding/react-hotel-booking.png)
-_The hotel booking template designed and shared by [edith.hsu](https://z7x2c0v0b8.github.io/the_f2e_2nd/hotel_reservation.html)_<
+![Hotel Booking Site with React](https://res.cloudinary.com/pamcy/image/upload/v1570325673/coding/react-hotel-booking.png)
+_The hotel booking template designed and shared by [edith.hsu](https://z7x2c0v0b8.github.io/the_f2e_2nd/hotel_reservation.html)_
 
 ## What I learned from this project
 
 - [x] Making AJAX API calls (`Get`, `Post`) with Axios
-- [x] Displaying Modal from Axios response
+- [x] Displaying Modal with success and error message from API response
 - [x] Handling React Date Picker with response data
 - [x] Form data validation
 - [x] Formatting date in JS

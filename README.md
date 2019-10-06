@@ -1,6 +1,6 @@
 # Hotel Booking Site with React [![Netlify Status](https://api.netlify.com/api/v1/badges/6fe3f8a5-0ac7-4cf8-9529-594bf7dedb89/deploy-status)](https://app.netlify.com/sites/react-hotel-booking/deploys)
 
-The main purpose of this project is to implement API requests with React, so I create myself a mini hotel booking website like Airbnb.
+The main purpose of this project is to implement API requests with React, so I create myself a mini hotel booking website like Airbnb. Visitor will be able to check room price and availability in the next 3 months, then fill out the simple form to book a room.
 
 ## Demo
 

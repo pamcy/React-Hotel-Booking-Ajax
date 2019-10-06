@@ -18,6 +18,7 @@ class DetailsPage extends Component {
 
   componentDidMount() {
     this.getCurrentRoomData();
+    window.scrollTo(0, 0);
   }
 
   getCurrentRoomData = async () => {

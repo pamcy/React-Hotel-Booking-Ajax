@@ -17,7 +17,7 @@ const Router = () => (
     <GithubCorner
       style={{ position: 'fixed', top: 0, right: 0, zIndex: 1 }}
       direction="right"
-      href=""
+      href="https://github.com/pamcy/React-Hotel-Booking-Ajax"
       target="_blank"
     />
   </>

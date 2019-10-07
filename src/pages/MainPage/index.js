@@ -15,7 +15,6 @@ class MainPage extends Component {
 
   componentDidMount() {
     this.getRoomsData();
-    window.scrollTo(0, 0);
   }
 
   getRoomsData = async () => {

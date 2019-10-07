@@ -5,14 +5,17 @@ import GithubCorner from 'react-github-corner';
 
 import MainPage from '../pages/MainPage/index';
 import DetailsPage from '../pages/DetailsPage/index';
+import ScrollToTop from './ScrollToTop';
 
 const Router = () => (
   <>
     <BrowserRouter>
-      <Switch>
-        <Route exact path="/" component={MainPage} />
-        <Route path="/room/:roomId" component={DetailsPage} />
-      </Switch>
+      <ScrollToTop>
+        <Switch>
+          <Route exact path="/" component={MainPage} />
+          <Route path="/room/:roomId" component={DetailsPage} />
+        </Switch>
+      </ScrollToTop>
     </BrowserRouter>
     <GithubCorner
       style={{ position: 'fixed', top: 0, right: 0, zIndex: 1 }}
